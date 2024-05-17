@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.webp|\.gif|\.jpeg|\.zip|\.css|\.svg|\.js|\.webmanifest|\.pdf|\.txt|\.woff|\.woff2|\.ttf)$
+RewriteRule (.*) index.php [QSA,L]
+
+<filesMatch ".(ico|pdf|jpg|jpeg|webp|png|js|css|woff|woff2|ttf)$">
+    Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
