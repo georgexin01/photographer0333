@@ -85,6 +85,8 @@
 					}, {
 						offset: '85%'
 					});
+					//geturl after vue load
+					this.getGalleryUrl()
 				}, 1000);
 			}).catch((error) => {
 				console.error("An error occurred:", error);
@@ -128,7 +130,7 @@
 	});
 
 </script>
-<script>
+<!-- <script>
 	var pathname = window.location.pathname;
 	var patharr = pathname.split("/");
 	var pathname = patharr[patharr.length - 1];
@@ -140,7 +142,7 @@
 		matchedLinks.closest('.annie-sub').addClass('open');
 		matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
 	}
-</script>
+</script> -->
 <!-- jQuery -->
 <script src="/js/modernizr-2.6.2.min.js"></script>
 <script src="/js/jquery.easing.1.3.js"></script>
