@@ -11,7 +11,6 @@
 		$('.annie-main-menu a[href$="' + pathname + '"]').closest('li').addClass('active');
 		$('.annie-main-menu a[href$="' + pathname + '"]').closest('.annie-sub').addClass('active open');
 		$('.annie-main-menu a[href$="' + pathname + '"]').closest('.annie-sub').find('ul').css('display', 'block');
-
 	}
 </script>
 <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
@@ -40,10 +39,8 @@
 			}
 			const sheetTransformer = (cols, rows) => {
 				const response = []
-
 				for (const x of rows) {
 					const data = {}
-
 					for (let y = 0; y < x.c.length; y++) {
 						const key = cols[y].label
 						const value = x.c[y]?.f ?? x.c[y]?.v
@@ -52,34 +49,29 @@
 							data[key] = value
 						}
 					}
-
 					response.push(data)
 				}
-
 				return response
 			}
 
 			getData(sheetId, "galleries").then((data) => {
 				this.galleries = sheetTransformer(data.table.cols, data.table.rows);
-
-				setTimeout(() => {
-
-
-
-				}, 1000);
-
+				timerGetData();
 			}).catch((error) => {
 				console.error("An error occurred:", error);
 			});
-
 			getData(sheetId, "libraries").then((data) => {
 				this.libraries = sheetTransformer(data.table.cols, data.table.rows);
-
+				timerGetData();
+			}).catch((error) => {
+				console.error("An error occurred:", error);
+			});
+			//reset animation
+			function timerGetData(){
 				setTimeout(() => {
 					$(document).ready(function () {
 						$("[data-fancybox]").fancybox();
 					});
-
 					$('.animate-box').waypoint(function (direction) {
 						var i = 0;
 						if (direction === 'down' && !$(this.element).hasClass('animated')) {
@@ -105,23 +97,23 @@
 										el.removeClass('item-animate');
 									}, k * 200, 'easeInOutExpo');
 								});
-							}, 100);
+							}, 1000);
 						}
 					}, {
 						offset: '85%'
 					});
-				}, 1000);
-
-			}).catch((error) => {
-				console.error("An error occurred:", error);
-			});
+				}, 100);
+			}
 		},
 		methods: {
 			googleImageConvertToImage(link) {
 				return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w500";
 			},
 			filterByGalleryName(url) {
-				return this.libraries.filter(library => library.galleryUrl === url);
+				return this.libraries.filter(tables => tables.galleryUrl === url);
+			},
+			findById(url){
+				return this.galleries.filter(tables => tables.name === url);
 			},
 			getGalleryUrl() {
 				var pathname = window.location.pathname;
@@ -137,7 +129,6 @@
 					const name = customer.name.toLowerCase();
 					const contactA = customer.contactA.toString().toLowerCase();
 					const searchTerm = this.filterCustomer.toLowerCase();
-
 					return (id.includes(searchTerm) || name.includes(searchTerm) || contactA.includes(searchTerm));
 				});
 			},

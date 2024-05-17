@@ -10,11 +10,10 @@
 
         <!-- Gallery -->
         <div class="annie-gallery">
-            <!-- <pre>{{filterByGalleryName(getGalleryUrl())}}</pre> -->
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-12 text-center"> <span class="heading-meta">Portfolio</span>
-                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp">Photo Gallery</h2>
+                    <div class="col-md-12 text-center"> <span class="heading-meta">Gallery</span>
+                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp"></h2>
                     </div>
                 </div>
                 <div class="row align-items-stretch annie-photos" id="annie-section-photos">
@@ -60,7 +59,6 @@
                 </div>
                 <div class="row align-items-stretch annie-photos mb-60" id="annie-section-photos">
                     <div class="col-12">
-                        <!-- IMPORTANT: Some functionality (ajax, iframes, etc) will not work when you're opening local file directly on your browser, the code must be running on a web server. SOURCE: https://fancyapps.com/fancybox/3/docs/ -->
                         <div class="row align-items-stretch">
                             <!-- YouTube Popup -->
                             <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
