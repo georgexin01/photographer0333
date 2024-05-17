@@ -1,18 +1,5 @@
 </div>
 <script src="/js/jquery.min.js"></script>
-<script>
-	var pathname = window.location.pathname;
-	var patharr = pathname.split("/");
-	var pathname = patharr[patharr.length - 1];
-	console.log(pathname);
-	if (pathname == "") {
-		$('.annie-main-menu a:first').closest('li').addClass('active');
-	} else {
-		$('.annie-main-menu a[href$="' + pathname + '"]').closest('li').addClass('active');
-		$('.annie-main-menu a[href$="' + pathname + '"]').closest('.annie-sub').addClass('active open');
-		$('.annie-main-menu a[href$="' + pathname + '"]').closest('.annie-sub').find('ul').css('display', 'block');
-	}
-</script>
 <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-router@3.5.2/dist/vue-router.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -53,21 +40,17 @@
 				}
 				return response
 			}
-
 			getData(sheetId, "galleries").then((data) => {
 				this.galleries = sheetTransformer(data.table.cols, data.table.rows);
-				timerGetData();
+				setTimeout(() => {
+
+
+				}, 1000);
 			}).catch((error) => {
 				console.error("An error occurred:", error);
 			});
 			getData(sheetId, "libraries").then((data) => {
 				this.libraries = sheetTransformer(data.table.cols, data.table.rows);
-				timerGetData();
-			}).catch((error) => {
-				console.error("An error occurred:", error);
-			});
-			//reset animation
-			function timerGetData(){
 				setTimeout(() => {
 					$(document).ready(function () {
 						$("[data-fancybox]").fancybox();
@@ -97,28 +80,37 @@
 										el.removeClass('item-animate');
 									}, k * 200, 'easeInOutExpo');
 								});
-							}, 1000);
+							}, 100);
 						}
 					}, {
 						offset: '85%'
 					});
-				}, 100);
-			}
+				}, 1000);
+			}).catch((error) => {
+				console.error("An error occurred:", error);
+			});
 		},
 		methods: {
 			googleImageConvertToImage(link) {
 				return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w500";
 			},
 			filterByGalleryName(url) {
-				return this.libraries.filter(tables => tables.galleryUrl === url);
+				return this.libraries.filter(library => library.galleryUrl === url);
 			},
-			findById(url){
-				return this.galleries.filter(tables => tables.name === url);
+			filterByGalleries(url) {
+				const filteredGalleries = this.galleries.filter(gallery => gallery.url === url);
+				if (filteredGalleries.length > 0) {
+					return filteredGalleries[0].name;
+				}
 			},
 			getGalleryUrl() {
 				var pathname = window.location.pathname;
 				var patharr = pathname.split("/");
 				var pathname = patharr[patharr.length - 1];
+				const matchedLinks = $('.annie-main-menu a[href*="' + pathname + '"]');
+				matchedLinks.closest('li').addClass('active');
+				matchedLinks.closest('.annie-sub').addClass('open');
+				matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
 				return pathname;
 			}
 		},
@@ -136,7 +128,19 @@
 	});
 
 </script>
-
+<script>
+	var pathname = window.location.pathname;
+	var patharr = pathname.split("/");
+	var pathname = patharr[patharr.length - 1];
+	if (pathname === "") {
+		$('.annie-main-menu a:first').closest('li').addClass('active');
+	} else {
+		const matchedLinks = $('.annie-main-menu a[href*="' + pathname + '"]');
+		matchedLinks.closest('li').addClass('active');
+		matchedLinks.closest('.annie-sub').addClass('open');
+		matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
+	}
+</script>
 <!-- jQuery -->
 <script src="/js/modernizr-2.6.2.min.js"></script>
 <script src="/js/jquery.easing.1.3.js"></script>

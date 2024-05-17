@@ -13,7 +13,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 text-center"> <span class="heading-meta">Gallery</span>
-                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp"></h2>
+                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp">{{filterByGalleries(getGalleryUrl())}}</h2>
                     </div>
                 </div>
                 <div class="row align-items-stretch annie-photos" id="annie-section-photos">
