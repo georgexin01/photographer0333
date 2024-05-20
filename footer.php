@@ -4,12 +4,42 @@
 <script src="https://unpkg.com/vue-router@3.5.2/dist/vue-router.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+	function fetchPostByType(type, url, data) {
+		// data type
+		const dataType = {};
+		for (const key in data) {
+			dataType[key] = typeof data[key];
+		}
+		const postData = { type, data, dataType };
+
+		let fetchPromise = fetch(
+			`https://script.google.com/macros/s/${url}/exec`,
+			{
+				method: "POST",
+				mode: "no-cors",
+				cache: "no-cache",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				redirect: "follow",
+				body: JSON.stringify(postData),
+			}
+		);
+		return fetchPromise;
+	}
 	// Create Vue instance
 	new Vue({
 		el: '#app',
 		data: {
 			galleries: [],
-			libraries: []
+			libraries: [],
+			form: {
+				name: '',
+				email: '',
+				contact: '',
+				subject: '',
+				message: ''
+			}
 		},
 		// 开始执行代码前，第一个执行就是 mounted
 		mounted() {
@@ -40,6 +70,7 @@
 				}
 				return response
 			}
+			//get data
 			getData(sheetId, "galleries").then((data) => {
 				this.galleries = sheetTransformer(data.table.cols, data.table.rows);
 				setTimeout(() => {
@@ -114,6 +145,23 @@
 				matchedLinks.closest('.annie-sub').addClass('open');
 				matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
 				return pathname;
+			},
+			submitForm(e) {
+				try {
+					const formData = Object.fromEntries(new FormData(e.target).entries());
+					const bookingData = {
+						name: formData.name,
+						email: formData.email,
+						contact: formData.contact,
+						subject: formData.subject,
+						message: formData.message,
+					};
+					console.log('Booking Data:', bookingData);
+					const fetchCode = 'AKfycbyGTMHfMp0SlqhkQFRGD-j4jzwkfWV6XHdCcerD5FDzodfDKhnMkhlKos_RvB3AZnpC';
+					fetchPostByType("sendEmail", fetchCode, bookingData);
+				} catch (error) {
+					console.error('Error submitting form:', error);
+				}
 			}
 		},
 		computed: {
