@@ -33,13 +33,15 @@
 		data: {
 			galleries: [],
 			libraries: [],
-			form: {
-				name: '',
-				email: '',
-				contact: '',
-				subject: '',
-				message: ''
-			}
+			formData: {
+				name: 'asd',
+				email: 'kkooc@gmail.com',
+				contact: 'asd',
+				subject: '123',
+				message: '123'
+			},
+			isLoading: false,
+			successfull: false
 		},
 		// 开始执行代码前，第一个执行就是 mounted
 		mounted() {
@@ -146,22 +148,22 @@
 				matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
 				return pathname;
 			},
-			submitForm(e) {
-				try {
-					const formData = Object.fromEntries(new FormData(e.target).entries());
-					const bookingData = {
-						name: formData.name,
-						email: formData.email,
-						contact: formData.contact,
-						subject: formData.subject,
-						message: formData.message,
-					};
-					console.log('Booking Data:', bookingData);
-					const fetchCode = 'AKfycbyGTMHfMp0SlqhkQFRGD-j4jzwkfWV6XHdCcerD5FDzodfDKhnMkhlKos_RvB3AZnpC';
-					fetchPostByType("sendEmail", fetchCode, bookingData);
-				} catch (error) {
-					console.error('Error submitting form:', error);
-				}
+			submitForm() {
+				const bookingData = {
+					name: this.formData.name,
+					email: this.formData.email,
+					contact: this.formData.contact,
+					subject: this.formData.subject,
+					message: this.formData.message,
+				};
+				this.isLoading = true;
+				console.log('Booking Data:', bookingData);
+				const fetchCode = 'AKfycbyGTMHfMp0SlqhkQFRGD-j4jzwkfWV6XHdCcerD5FDzodfDKhnMkhlKos_RvB3AZnpC';
+				setTimeout(() => {
+					this.isLoading = false;
+					this.successfull = true;
+				}, 2000);
+				// fetchPostByType("sendEmail", fetchCode, bookingData);
 			}
 		},
 		computed: {

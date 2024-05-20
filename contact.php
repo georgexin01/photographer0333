@@ -44,34 +44,43 @@
                         <h3 class="annie-contact-heading">Contact Form</h3>
                         <p>Interested to work with us?</p>
                         <form method="post" class="contact__form" @submit.prevent="submitForm">
-                            <!-- Form message -->
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                        Your message was sent successfully.
-                                    </div>
-                                </div>
-                            </div>
                             <!-- Form elements -->
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <input v-model="form.name" name="name" type="text" placeholder="Your Name *" required>
+                                    <input v-model="formData.name" name="name" type="text" placeholder="Your Name *"
+                                        required>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input v-model="form.email" name="email" type="email" placeholder="Your Email *" required>
+                                    <input v-model="formData.email" name="email" type="email" placeholder="Your Email *"
+                                        required>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input v-model="form.contact" name="contact" type="text" placeholder="Your Number *" required>
+                                    <input v-model="formData.contact" name="contact" type="text" placeholder="Your Number *"
+                                        required>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <input v-model="form.subject" name="subject" type="text" placeholder="Subject *" required>
+                                    <input v-model="formData.subject" name="subject" type="text" placeholder="Subject *"
+                                        required>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <textarea v-model="form.message" name="message" id="message" cols="30" rows="4" placeholder="Message *"
-                                        required></textarea>
+                                    <textarea v-model="formData.message" name="message" id="message" cols="30" rows="4"
+                                        placeholder="Message *" required></textarea>
                                 </div>
-                                <div class="col-md-12">
+                                <!-- if -->
+                                <div v-if="!isLoading" class="col-md-12">
                                     <input name="submit" type="submit" value="Send Message">
+                                </div>
+                                <!-- else -->
+                                <div v-else class="col-md-12">
+                                    <input name="submit" type="submit" value="Loading">
+                                </div>
+                            </div>
+                            <!-- Form message -->
+                            <div v-if="successfull" class="row">
+                                <div class="col-12">
+                                    <div class="alert alert-success contact__msg" role="alert">
+                                        Your message was sent successfully.
+                                    </div>
                                 </div>
                             </div>
                         </form>
