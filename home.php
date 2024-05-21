@@ -19,8 +19,10 @@
                                         <div class="col-md-12 js-fullheight slider-text">
                                             <div class="slider-text-inner">
                                                 <div class="mx-auto frame-inner">
-                                                    <h1>Annie McCury</h1>
-                                                    <h2>Photographer</h2> <span class="frame-1"></span> <span class="frame-2"></span> </div>
+                                                <h1><?= $web_title; ?></h1>
+                                                    <h2><?= $web_subtitle; ?></h2>
+                                                    <span class="frame-1"></span>
+                                                    <span class="frame-2"></span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -33,8 +35,10 @@
                                         <div class="col-md-12 js-fullheight slider-text">
                                             <div class="slider-text-inner">
                                                 <div class="mx-auto frame-inner">
-                                                    <h1>Annie McCury</h1>
-                                                    <h2>Photographer</h2> <span class="frame-1"></span> <span class="frame-2"></span> </div>
+                                                    <h1><?= $web_title; ?></h1>
+                                                    <h2><?= $web_marketing; ?></h2>
+                                                    <span class="frame-1"></span>
+                                                    <span class="frame-2"></span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -49,7 +53,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-8 offset-md-2 text-center profile-index animate-box" data-animate-effect="fadeInUp">
-                            <p class="annie-about-me">While there is perhaps a province in which the photograph can tell us nothing more than what we see with our own eyes, there is another in which it proves to us how little our eyes permit us to see.</p> <img src="images/sign.png" class="annie-about-signature" alt=""> </div>
+                            <p class="annie-about-me">While there may be moments when Gen Studio records only what is in our immediate sight, there are others when it reveals the hidden layers that elude our vision.</p> <img src="images/sign.png" class="annie-about-signature" alt=""> </div>
                     </div>
                 </div>
             </div>

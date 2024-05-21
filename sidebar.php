@@ -4,7 +4,7 @@
     <!-- Logo -->
     <div class="annie-logo">
         <a href="/"><img src="/images/logo.png" alt=""></a>
-        <h1><a href="/">Annie McCury<span>Photographer</span></a></h1>
+        <h1><a href="/"><?= $web_title; ?><span><?= $web_subtitle; ?></span></a></h1>
     </div>
     <!-- Menu -->
     <nav class="annie-main-menu">

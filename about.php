@@ -11,22 +11,22 @@
             <div class="annie-about">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-12 text-center"> <span class="heading-meta">Senior</span>
-                            <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp">About Me</h2> </div>
+                        <div class="col-md-12 text-center"> <span class="heading-meta">About Us</span>
+                            <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp"><?= $web_title; ?></h2> </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 animate-box" data-animate-effect="fadeInUp"> <img src="images/slider/01.jpg" class="img-fluid mb-30" alt="annie"> </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 animate-box" data-animate-effect="fadeInUp"> <span class="heading-meta">Photographer</span>
-                            <h3 class="annie-about-heading">Annie McCury</h3>
-                            <p>Hello, I'm Annie McCury, a passionate photographer specializing in wedding, portrait, and cosplay photography. With over a decade of experience, I capture the beauty and emotion of each unique moment. What began as a hobby quickly turned into a fulfilling career, driven by my dedication and love for photography.</p>
+                            <h3 class="annie-about-heading">Thaxden</h3>
+                            <p>Hello, I'm Thaxden, a passionate photographer specializing in wedding, portrait, and cosplay photography. With over a decade of experience, I capture the beauty and emotion of each unique moment. What began as a hobby quickly turned into a fulfilling career, driven by my dedication and love for photography.</p>
                             <p>I believe every photograph tells a story, and I strive to convey these stories with authenticity and creativity. Whether it's the joy of a wedding day, the personality in a portrait, or the vibrant spirit of cosplay, my goal is to create images that resonate with my clients.</p>
                             <p>I've worked with diverse clients, providing timeless images to cherish forever. My work has been featured in various publications, showcasing my ability to capture the essence of any occasion.</p>
                             <p>Thank you for taking the time to learn about me. I look forward to creating stunning, lasting memories together.</p>
                             <p>Warm regards,</p>
-                            <p style="color: #000; text-decoration: underline;">Annie McCury</p>
-                            <p><img src="images/sign.png" class="annie-about-signature" alt="annie"></p>
+                            <p style="color: #000; text-decoration: underline;">Thaxden</p>
+                            <p><img src="images/sign.png" class="annie-about-signature" alt="Thaxden"></p>
                         </div>
                     </div>
                 </div>

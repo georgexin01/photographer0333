@@ -1,3 +1,20 @@
+<?php
+     //Init
+    $web_title = 'Gen Studio';
+    $web_subtitle = 'DLove Production';
+    $web_marketing = 'Vista Marketing';
+
+    //Init
+    $default_name = 'Thaxden';
+    $default_contact = '011-58779139';
+    $default_email = 'genstudio27@gmail.com';
+    $default_address = '73B, Jalan Harmonium 35/1, Taman Desa Tebrau 81100, Johor Bahru';
+    function formatPhoneNumber($contact) {
+        $num = preg_replace('/[^0-9]/', '', $contact);
+        if (substr($num, 0, 1) !== '6') { $num = '6' . $num; }
+        return '+6 ' . substr($num, 1, 3) . '-' . substr($num, 4, 3) . ' ' . substr($num, 7);
+    }
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -38,22 +55,3 @@
     </div>
 
     <div id="app">
-
-<?php
-    //Init
-    $default_name = 'Thaxden';
-    $default_contact = '011-58779139';
-    $default_email = 'genstudio27@gmail.com';
-    $default_address = '73B, Jalan Harmonium 35/1, Taman Desa Tebrau 81100, Johor Bahru';
-    function formatPhoneNumber($contact) {
-        $num = preg_replace('/[^0-9]/', '', $contact);
-        if (substr($num, 0, 1) !== '6') { $num = '6' . $num; }
-        return '+6 ' . substr($num, 1, 3) . '-' . substr($num, 4, 3) . ' ' . substr($num, 7);
-    }
-?>
-<!--
-    (Company.name)
-    DLove Production
-    Gen Studio
-    Vista Marketing
--->
