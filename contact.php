@@ -78,7 +78,7 @@
                             <!-- Form message -->
                             <div v-if="successfull" class="row">
                                 <div class="col-12">
-                                    <div class="alert alert-success contact__msg" role="alert">
+                                    <div class="alert alert-success contact__msg" style="margin-top: 15px" role="alert">
                                         Your message was sent successfully.
                                     </div>
                                 </div>

@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/02.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/02.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/06.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/06.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/05.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/05.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/04.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/04.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/01.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/01.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                             <div class="annie-services">
-                                <a href="services-post.html"> <img src="images/services/03.jpg" class="img-fluid" alt="">
+                                <a> <img src="images/services/03.jpg" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">
                                             <div class="annie-icon"> <i class="fa fa-camera"></i> </div>
@@ -85,7 +85,8 @@
                     <div class="row">
                         <div class="col-md-12 mt-60 text-center animate-box" data-animate-effect="fadeInUp"> <span class="heading-meta">Interested to work with us?</span>
                             <div class="form-group">
-                                <input type="submit" class="btn btn-contact" value="Contact With Us"> </div>
+                                <a href="contact" class="btn btn-contact">Contact With Us</a>
+                            </div>
                         </div>
                     </div>
                 </div>
