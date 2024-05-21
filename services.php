@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'init_head.php'; ?>
     <!-- Main -->
     <div class="annie-page"> 
        
@@ -163,18 +163,10 @@
             </div>
                 </div>
             </div>
-            <!-- Footer -->
-            <div id="annie-footer">
-                <div class="annie-narrow-content">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <h1>Annie McCury <span>Photographer</span></h1>
-                            <p class="annie-lead">&copy; 2024 Annie by DuruThemes</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <?php include 'footer.php'; ?>
+            
         </div>
         
  </div>
-<?php include 'footer.php'; ?>
+<?php include 'init_body.php'; ?>
