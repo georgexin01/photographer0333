@@ -12,8 +12,7 @@ new Vue({
             message: '123'
         },
         isLoading: false,
-        successfull: false,
-        maxPhoto: 6
+        successfull: false
     },
     // 开始执行代码前，第一个执行就是 mounted
     mounted() {

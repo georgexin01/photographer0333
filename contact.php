@@ -34,9 +34,9 @@
                         <h3 class="annie-contact-heading">I’m available for booking.</h3>
                         <p>Book your session now for unforgettable photographs that tell your unique story.
                         </p>
-                        <p><b>Phone:</b> +1 650-444-0000</p>
-                        <p><b>Email:</b> photo@annie.com</p>
-                        <p><b>Address:</b> 350 North First Street, San Jose, CA 95112, US.</p>
+                        <p><b>Phone:</b> <?= formatPhoneNumber($default_contact); ?></p>
+                        <p><b>Email:</b> <?= $default_email; ?></p>
+                        <p><b>Address:</b> <?= $default_address; ?></p>
                     </div>
                     <!-- Contact Form -->
                     <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">

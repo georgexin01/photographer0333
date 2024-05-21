@@ -1,10 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> AM | Photographer </title>
+    <title> Gen Studio | DLove Production | Vista Marketing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&amp;display=swap">
@@ -23,7 +22,6 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
 </head>
-
 <body>
     <!-- Preloader -->
     <div class="preloader-bg"></div>
@@ -40,3 +38,22 @@
     </div>
 
     <div id="app">
+
+<?php
+    //Init
+    $default_name = 'Thaxden';
+    $default_contact = '011-58779139';
+    $default_email = 'genstudio27@gmail.com';
+    $default_address = '73B, Jalan Harmonium 35/1, Taman Desa Tebrau 81100, Johor Bahru';
+    function formatPhoneNumber($contact) {
+        $num = preg_replace('/[^0-9]/', '', $contact);
+        if (substr($num, 0, 1) !== '6') { $num = '6' . $num; }
+        return '+6 ' . substr($num, 1, 3) . '-' . substr($num, 4, 3) . ' ' . substr($num, 7);
+    }
+?>
+<!--
+    (Company.name)
+    DLove Production
+    Gen Studio
+    Vista Marketing
+-->

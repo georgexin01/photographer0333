@@ -19,7 +19,7 @@
                 <div class="row align-items-stretch annie-photos" id="annie-section-photos">
                     <div class="col-12">
                         <div class="row align-items-stretch load-photo">
-                            <div v-for="(library, index) in filterByGalleryName(getGalleryUrl(), maxPhoto)" class="col-12 col-md-6 col-lg-4 animate-box"
+                            <div v-for="(library, index) in filterByGalleryName(getGalleryUrl(), 9)" class="col-12 col-md-6 col-lg-4 animate-box"
                                 data-animate-effect="fadeInUp">
                                 <a :href="googleImageConvertToImage(library.googleImageLink)"
                                     class="d-block annie-photo-item" data-caption="Potrait Photo"
@@ -32,12 +32,12 @@
                     </div>
                 </div>
                 
-                <div class="row align-items-stretch mt-60" v-if="totalGallery(getGalleryUrl()) > maxPhoto">
+                <div class="row align-items-stretch mt-60" v-if="totalGallery(getGalleryUrl()) > 9">
                     <div class="col-12">
                         <!-- show more -->
                         <div class="annie-show-more-container">
                             <div class="row align-items-stretch annie-photos" id="annie-section-photos">
-                                <div v-for="(library, index) in filterByGalleryName(getGalleryUrl(), -maxPhoto)" class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
+                                <div v-for="(library, index) in filterByGalleryName(getGalleryUrl(), -9)" class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
                                     <a :href="googleImageConvertToImage(library.googleImageLink)" class="d-block annie-photo-item"
                                         data-caption="Movie Photo" data-fancybox="gallery">
                                         <img :src="googleImageConvertToImage(library.googleImageLink)" alt="Image" class="img-fluid">
