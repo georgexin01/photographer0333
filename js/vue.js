@@ -12,7 +12,8 @@ new Vue({
             message: '123'
         },
         isLoading: false,
-        successfull: false
+        successfull: false,
+        maxPhoto: 6
     },
     // 开始执行代码前，第一个执行就是 mounted
     mounted() {
@@ -100,11 +101,21 @@ new Vue({
         googleImageConvertToImage(link) {
             return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w500";
         },
-        filterByGalleryName(url) {
-            return this.libraries.filter(library => library.galleryUrl === url);
+        filterByGalleryName(url, limit) {
+            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === url);
+            if (limit > 0) {
+                return filteredLibraries.slice(0, limit);
+            } else {
+                limit = 0 - limit;
+                return filteredLibraries.slice(limit, filteredLibraries.length);
+            }
+        },
+        totalGallery(url){
+            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === url);
+            return filteredLibraries.length;
         },
         filterByGalleries(url) {
-            const filteredGalleries = this.galleries.filter(gallery => gallery.url === url);
+            const filteredGalleries = this.galleries.filter(data => data.url === url);
             if (filteredGalleries.length > 0) {
                 return filteredGalleries[0].name;
             }

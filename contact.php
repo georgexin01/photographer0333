@@ -31,9 +31,8 @@
                 <div class="row mb-60">
                     <!-- Contact Info -->
                     <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
-                        <h3 class="annie-contact-heading">I’m available for worldwide orders.</h3>
-                        <p>Qualamy nisl sodales sit amet sapien id, placerat sodales orciter.
-                            <br />Vivamus nec magna rhoncus felis, faucibus printy.
+                        <h3 class="annie-contact-heading">I’m available for booking.</h3>
+                        <p>Book your session now for unforgettable photographs that tell your unique story.
                         </p>
                         <p><b>Phone:</b> +1 650-444-0000</p>
                         <p><b>Email:</b> photo@annie.com</p>
