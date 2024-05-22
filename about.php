@@ -18,13 +18,13 @@
                         <div class="col-md-12 animate-box" data-animate-effect="fadeInUp"> <img src="images/slider/01.jpg" class="img-fluid mb-30" alt="annie"> </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 animate-box" data-animate-effect="fadeInUp"> <span class="heading-meta">Photographer</span>
+                        <div class="col-md-12 animate-box" data-animate-effect="fadeInUp"> <span class="heading-meta">Person Incharge</span>
                             <h3 class="annie-about-heading">Thaxden</h3>
-                            <p>Hello, I'm Thaxden, a passionate photographer specializing in wedding, portrait, and cosplay photography. With over a decade of experience, I capture the beauty and emotion of each unique moment. What began as a hobby quickly turned into a fulfilling career, driven by my dedication and love for photography.</p>
-                            <p>I believe every photograph tells a story, and I strive to convey these stories with authenticity and creativity. Whether it's the joy of a wedding day, the personality in a portrait, or the vibrant spirit of cosplay, my goal is to create images that resonate with my clients.</p>
-                            <p>I've worked with diverse clients, providing timeless images to cherish forever. My work has been featured in various publications, showcasing my ability to capture the essence of any occasion.</p>
-                            <p>Thank you for taking the time to learn about me. I look forward to creating stunning, lasting memories together.</p>
-                            <p>Warm regards,</p>
+                            <p>Hello, I'm Thaxden, a seasoned photographer dedicated to preserving life's treasured moments. With expertise in wedding, opening ceremony, shooting events, awards, pregnant, baby, and family portrait photography, I've spent over a decade perfecting the art of storytelling through imagery.</p>
+                            <p>My three studios—Gen Studio, DLove Studio Production, and Vista Marketing—blend creativity with cutting-edge technology. At Gen Studio, I craft each photograph with meticulous care, ensuring authenticity and quality. DLove Studio Production offers comprehensive packages, including video services, to bring your memories to life.</p>
+                            <p>Vista Marketing amplifies my artistic vision, creating captivating visual narratives for brands and events. With an unwavering commitment to excellence, I strive to capture moments that resonate deeply. Whether it's the intimacy of a family portrait or the joy of a wedding celebration, I aim to create enduring memories.</p>
+                            <p>
+                            <p>Thank you for considering me for your photographic needs. I'm eager to collaborate and create lasting legacies together.</p>
                             <p style="color: #000; text-decoration: underline;">Thaxden</p>
                             <p><img src="images/sign.png" class="annie-about-signature" alt="Thaxden"></p>
                         </div>

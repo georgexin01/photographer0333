@@ -5,14 +5,18 @@ new Vue({
         galleries: [],
         libraries: [],
         formData: {
-            name: 'asd',
-            email: 'kkooc@gmail.com',
-            contact: 'asd',
-            subject: '123',
-            message: '123'
+            name: 'test',
+            email: 'test@gmail.com',
+            contact: '0123',
+            subject: 'test',
+            message: 'messages'
         },
         isLoading: false,
-        successfull: false
+        successfull: false,
+        url: ''
+    },
+    created() {
+        this.url = this.getUrl();
     },
     // 开始执行代码前，第一个执行就是 mounted
     mounted() {
@@ -90,44 +94,43 @@ new Vue({
                     offset: '85%'
                 });
                 //geturl after vue load
-                this.getGalleryUrl()
+                let pathname = this.url;
+                const matchedLinks = $('.annie-main-menu a[href*="' + pathname + '"]');
+                matchedLinks.closest('li').addClass('active');
+                matchedLinks.closest('.annie-sub').addClass('open');
+                matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
             }, 1000);
         }).catch((error) => {
             console.error("An error occurred:", error);
         });
     },
     methods: {
+        //convert images
         googleImageConvertToImage(link) {
             return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w500";
         },
-        filterByGalleryName(url, limit) {
-            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === url);
-            if (limit > 0) {
-                return filteredLibraries.slice(0, limit);
-            } else {
-                limit = 0 - limit;
-                return filteredLibraries.slice(limit, filteredLibraries.length);
+        //get Libraries
+        filterLibraries(limit) {
+            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === this.url);
+            if (filteredLibraries.length > 0) {
+                if (limit > 0) {
+                    return filteredLibraries.slice(0, limit);
+                } else {
+                    limit = 0 - limit;
+                    return filteredLibraries.slice(limit, filteredLibraries.length);
+                }
             }
         },
-        totalGallery(url){
-            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === url);
-            return filteredLibraries.length;
+        //total Libraries
+        totalLibraries() {
+            return this.libraries.filter(data => data.galleryUrl === this.url).length;
         },
-        filterByGalleries(url) {
-            const filteredGalleries = this.galleries.filter(data => data.url === url);
-            if (filteredGalleries.length > 0) {
-                return filteredGalleries[0].name;
-            }
+        filterGalleries() {
+            return this.galleries.find(data => data.url === this.url);
         },
-        getGalleryUrl() {
-            var pathname = window.location.pathname;
-            var patharr = pathname.split("/");
-            var pathname = patharr[patharr.length - 1];
-            const matchedLinks = $('.annie-main-menu a[href*="' + pathname + '"]');
-            matchedLinks.closest('li').addClass('active');
-            matchedLinks.closest('.annie-sub').addClass('open');
-            matchedLinks.closest('.annie-sub').find('ul').css('display', 'block');
-            return pathname;
+        getUrl() {
+            const patharr = window.location.pathname.split("/");
+            return patharr[patharr.length - 1];
         },
         submitForm() {
             const bookingData = {

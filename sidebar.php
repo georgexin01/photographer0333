@@ -23,10 +23,10 @@
     <!-- Sidebar Footer -->
     <div class="annie-footer">
         <ul>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-            <li><a href="#"><i class="fab fa-500px"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100090307274097" tab="test" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100095064726523" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61558993437547" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/genstudio27/?igsh=ZDFpcjYzaWlxNHY2&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a></li>
         </ul>
         <p><small>&copy; 2024 by Zeta Technology</small></p>
     </div>

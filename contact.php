@@ -28,11 +28,52 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mb-30">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="annie-contact-heading">Follow us on Social Media.</h3>
+                    </div>
+                    <!-- Contact Social -->
+                    <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="social-icon">
+                            <a href="https://www.facebook.com/profile.php?id=100090307274097" target="_blank">
+                                <img src="images/logo/gen.png"> <span> Gen Studio </span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                        <a href="https://www.facebook.com/profile.php?id=100095064726523" target="_blank">
+                            <img src="images/logo/dlove.png"> <span> DLove Studio Production </span>
+                        </a>
+                        </div>
+                        <div class="social-icon">
+                        <a href="https://www.facebook.com/profile.php?id=61558993437547" target="_blank">
+                            <img src="images/logo/vista.png"> <span> Vista Marketing </span>
+                        </a>
+                        </div>
+                    </div>
+                    <!-- Contact Social -->
+                    <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <div class="social-icon">
+                            <a href="https://www.instagram.com/genstudio27/?igsh=ZDFpcjYzaWlxNHY2&utm_source=qr" target="_blank">
+                                <img src="images/logo/instagram.png"> <span> Gen Studio 27 </span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                        <a href="https://www.xiaohongshu.com/user/profile/64b012ed000000000b01794f?xhsshare=CopyLink&appuid=64b012ed000000000b01794f&apptime=1716177460" target="_blank">
+                            <img src="images/logo/xiaohong.png"> <span>Gen Studio </span>
+                        </a>
+                        </div>
+                        <div class="social-icon">
+                        <a href="https://www.xiaohongshu.com/user/profile/636cab60000000001f01dcda?xhsshare=CopyLink&appuid=636cab60000000001f01dcda&apptime=1716177471" target="_blank">
+                            <img src="images/logo/xiaohong.png"> <span>DLove Studio </span>
+                        </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mb-60">
                     <!-- Contact Info -->
                     <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
                         <h3 class="annie-contact-heading">I’m available for booking.</h3>
-                        <p>Book your session now for unforgettable photographs that tell your unique story.
+                        <p>Stunning Portraits Capturing Your Unique Style Book a Session Today for Memories That Last a Lifetime.
                         </p>
                         <p><b>Phone:</b> <?= formatPhoneNumber($default_contact); ?></p>
                         <p><b>Email:</b> <?= $default_email; ?></p>

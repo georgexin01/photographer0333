@@ -8,7 +8,7 @@
         <!-- Main Content -->
         <div class="annie-main">
             <!-- Services -->
-            <div class="annie-service">
+            <div class="annie-service mb-60">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 text-center"> <span class="heading-meta">What We Do</span>
@@ -82,17 +82,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12 mt-60 text-center animate-box" data-animate-effect="fadeInUp"> <span class="heading-meta">Interested to work with us?</span>
                             <div class="form-group">
                                 <a href="contact" class="btn btn-contact">Contact With Us</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- Pricing -->
-            <div class="annie-pricing mb-60">
+            <!-- <div class="annie-pricing mb-60">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 text-center"> <span class="heading-meta">Packages</span>
@@ -162,7 +162,7 @@
                 </div>
             </div>
                 </div>
-            </div>
+            </div> -->
 
             <?php include 'footer.php'; ?>
             

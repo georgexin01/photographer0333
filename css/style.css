@@ -2072,3 +2072,30 @@ ul.social-network li {
 .fancybox-show-thumbs .fancybox-inner {
     right: 0;
 }
+.social-icon{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.social-icon a{ 
+    display: flex;
+    gap: 10px;
+}
+.social-icon a img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+.social-icon a span{
+    font-size: 16px;
+    color: #555;
+    padding: 5px 10px;
+    padding-top: 8px;
+    transition: all 0.3s ease;
+    margin: auto 0;
+}
+.social-icon:hover a span,
+.social-icon:active a span{
+    color: #000;
+}
