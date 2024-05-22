@@ -115,7 +115,6 @@ new Vue({
         //get Libraries
         filterLibraries(limit) {
             let filteredLibraries = this.libraries.filter(data => data.galleryUrl === this.url);
-            //filteredLibraries = filteredLibraries.filter(data => data.googleImageLink !== undefined && data.googleImageLink !== "");
             if (filteredLibraries.length > 0) {
                 if (limit > 0) {
                     return filteredLibraries.slice(0, limit);
@@ -131,17 +130,9 @@ new Vue({
         },
         filterGalleries() {
             return this.galleries.filter(data => data.url === this.url);
-            // let filteredGalleries =  this.galleries.filter(data => data.url === this.url);
-            // if (filteredGalleries.length > 0) {
-            //     return filteredGalleries[0].name;
-            // }
         },
         filterGalleryName() {
             return this.filterGalleries()[0]?.name;
-            // let filteredGalleries =  this.galleries.filter(data => data.url === this.url);
-            // if (filteredGalleries.length > 0) {
-            //     return filteredGalleries[0].name;
-            // }
         },
         getUrl() {
             const patharr = window.location.pathname.split("/");
