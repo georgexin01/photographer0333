@@ -4,6 +4,7 @@ new Vue({
     data: {
         galleries: [],
         libraries: [],
+        services: [],
         formData: {
             name: 'test',
             email: 'test@gmail.com',
@@ -50,10 +51,12 @@ new Vue({
         //get data
         getData(sheetId, "galleries").then((data) => {
             this.galleries = sheetTransformer(data.table.cols, data.table.rows);
-            setTimeout(() => {
-
-
-            }, 1000);
+        }).catch((error) => {
+            console.error("An error occurred:", error);
+        });
+         //get data
+         getData(sheetId, "services").then((data) => {
+            this.services = sheetTransformer(data.table.cols, data.table.rows);
         }).catch((error) => {
             console.error("An error occurred:", error);
         });
@@ -111,12 +114,13 @@ new Vue({
         },
         //get Libraries
         filterLibraries(limit) {
-            let filteredLibraries =  this.libraries.filter(data => data.galleryUrl === this.url);
+            let filteredLibraries = this.libraries.filter(data => data.galleryUrl === this.url);
+            //filteredLibraries = filteredLibraries.filter(data => data.googleImageLink !== undefined && data.googleImageLink !== "");
             if (filteredLibraries.length > 0) {
                 if (limit > 0) {
                     return filteredLibraries.slice(0, limit);
                 } else {
-                    limit = 0 - limit;
+                    limit = Math.abs(limit); // Convert to positive
                     return filteredLibraries.slice(limit, filteredLibraries.length);
                 }
             }
@@ -126,7 +130,18 @@ new Vue({
             return this.libraries.filter(data => data.galleryUrl === this.url).length;
         },
         filterGalleries() {
-            return this.galleries.find(data => data.url === this.url);
+            return this.galleries.filter(data => data.url === this.url);
+            // let filteredGalleries =  this.galleries.filter(data => data.url === this.url);
+            // if (filteredGalleries.length > 0) {
+            //     return filteredGalleries[0].name;
+            // }
+        },
+        filterGalleryName() {
+            return this.filterGalleries()[0]?.name;
+            // let filteredGalleries =  this.galleries.filter(data => data.url === this.url);
+            // if (filteredGalleries.length > 0) {
+            //     return filteredGalleries[0].name;
+            // }
         },
         getUrl() {
             const patharr = window.location.pathname.split("/");

@@ -13,25 +13,36 @@
             <div class="container-fluid pb-5">
                 <div class="row">
                     <div class="col-md-12 text-center"> <span class="heading-meta">Gallery</span>
-                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp">{{filterGalleries().name}}</h2>
+                        <h2 class="annie-heading animate-box" data-animate-effect="fadeInUp">{{filterGalleryName()}}</h2>
                     </div>
                 </div>
                 <div class="row align-items-stretch annie-photos" id="annie-section-photos">
                     <div class="col-12">
                         <div class="row align-items-stretch load-photo">
-                            <div v-for="(library, index) in filterLibraries(9)" class="col-12 col-md-6 col-lg-4 animate-box"
-                                data-animate-effect="fadeInUp">
-                                <a :href="googleImageConvertToImage(library.googleImageLink)"
-                                    class="d-block annie-photo-item" data-caption="Potrait Photo"
-                                    data-fancybox="gallery"> <img
-                                        :src="googleImageConvertToImage(library.googleImageLink)" alt="Image"
-                                        class="img-fluid">
-                                </a>
-                            </div>
+                            <template v-for="(library, index) in filterLibraries(9)">
+                                <div v-if="library.googleImageLink !== undefined && library.googleImageLink !== ''"
+                                         class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
+                                    <!-- Images -->
+                                    <a :href="googleImageConvertToImage(library.googleImageLink)"
+                                        data-fancybox="gallery" class="ratio">
+                                        <img :src="googleImageConvertToImage(library.googleImageLink)" alt="Image"
+                                            class="img-fluid">
+                                    </a>
+                                </div>
+                                 <div v-else-if="library.youtubeLink !== undefined && library.youtubeLink !== ''"
+                                     class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
+                                    <!-- youtube -->
+                                    <a :href="library.youtubeLink" data-fancybox="gallery" class="ratio">
+                                        <img class="img-fluid" src="https://img.youtube.com/vi/rnbkfI34rtw/default.jpg"
+                                            alt="YouTube Thumbnail">
+                                        <p><span class="fab fa-youtube"></span></p>
+                                    </a>
+                                </div>
+                            </template>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row align-items-stretch mt-60" v-if="totalLibraries() > 9">
                     <div class="col-12">
                         <!-- add more -->
@@ -42,17 +53,28 @@
                         <!-- show more -->
                         <div class="annie-show-more-container">
                             <div class="row align-items-stretch annie-photos" id="annie-section-photos">
-                                <div v-for="(library, index) in filterLibraries(-9)" class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
-                                    <a :href="googleImageConvertToImage(library.googleImageLink)" class="d-block annie-photo-item"
-                                        data-caption="Movie Photo" data-fancybox="gallery">
-                                        <img :src="googleImageConvertToImage(library.googleImageLink)" alt="Image" class="img-fluid">
+                                <div v-for="(library, index) in filterLibraries(-9)"
+                                    class="col-12 col-md-6 col-lg-4 animate-box" data-animate-effect="fadeInUp">
+                                    <!-- Images -->
+                                    <a v-if="library.googleImageLink !== undefined && library.googleImageLink !== ''"
+                                        :href="googleImageConvertToImage(library.googleImageLink)"
+                                        data-fancybox="gallery" class="ratio">
+                                        <img :src="googleImageConvertToImage(library.googleImageLink)" alt="Image"
+                                            class="img-fluid">
+                                    </a>
+                                    <!-- youtube -->
+                                    <a v-else-if="library.youtubeLink !== undefined && library.youtubeLink !== ''"
+                                        :href="library.youtubeLink" data-fancybox="gallery" class="ratio">
+                                        <img class="img-fluid" src="https://img.youtube.com/vi/rnbkfI34rtw/default.jpg"
+                                            alt="YouTube Thumbnail">
+                                        <p><span class="fab fa-youtube"></span></p>
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Video Gallery -->
                 <!-- <div class="row">
                     <div class="col-md-12 text-center mt-60"> <span class="heading-meta">Portfolio</span>
@@ -91,7 +113,7 @@
         </div>
 
         <?php include 'footer.php'; ?>
-        
+
     </div>
 
 
