@@ -58,6 +58,12 @@
                             </a>
                         </div>
                         <div class="social-icon">
+                            <a href="https://www.instagram.com/dlove.production/?igsh=MXU1cjZibjN0b3l1dQ%3D%3D&utm_source=qr" target="_blank">
+                                <img src="images/logo/instagram.png"> <span> Dlove.Production </span>
+                            </a>
+                        </div>
+                        
+                        <div class="social-icon">
                         <a href="https://www.xiaohongshu.com/user/profile/64b012ed000000000b01794f?xhsshare=CopyLink&appuid=64b012ed000000000b01794f&apptime=1716177460" target="_blank">
                             <img src="images/logo/xiaohong.png"> <span>Gen Studio </span>
                         </a>
