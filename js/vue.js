@@ -110,7 +110,7 @@ new Vue({
     methods: {
         //convert images
         googleImageConvertToImage(link) {
-            return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w500";
+            return "https://lh3.googleusercontent.com/d/" + link.split('/')[5] + "=w600";
         },
         //get Libraries
         filterLibraries(limit) {

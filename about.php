@@ -32,7 +32,7 @@
                 </div>
             </div>
             <!-- Our Team -->
-            <div class="annie-teams mb-60">
+            <!-- <div class="annie-teams mb-60">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12 text-center"> <span class="heading-meta">Photographer</span>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <?php include 'footer.php'; ?>
         </div>
         
